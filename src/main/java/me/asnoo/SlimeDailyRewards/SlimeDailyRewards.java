@@ -16,6 +16,8 @@ public final class SlimeRewards extends JavaPlugin {
 
         instance = this;
 
+        saveDefaultConfig();
+
         playerData = new ConfigManager();
 
         getCommand("daily").setExecutor(new DailyCommand());
