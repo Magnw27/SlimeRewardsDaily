@@ -1,1 +1,62 @@
-players: {}
+package me.asnoo.slimedailyrewards.storage;
+
+import me.asnoo.slimedailyrewards.SlimeDailyRewards;
+import org.bukkit.configuration.file.FileConfiguration;
+
+import java.util.UUID;
+
+public class PlayerData {
+
+    private static FileConfiguration config() {
+
+        return SlimeDailyRewards.getInstance()
+                .getPlayerData()
+                .getConfig();
+
+    }
+
+    public static int getCurrentDay(UUID uuid) {
+
+        return config().getInt(
+                "players." + uuid + ".day",
+                1
+        );
+
+    }
+
+    public static void setCurrentDay(UUID uuid, int day) {
+
+        config().set(
+                "players." + uuid + ".day",
+                day
+        );
+
+        SlimeDailyRewards.getInstance()
+                .getPlayerData()
+                .save();
+
+    }
+
+    public static long getLastClaim(UUID uuid) {
+
+        return config().getLong(
+                "players." + uuid + ".last-claim",
+                0L
+        );
+
+    }
+
+    public static void setLastClaim(UUID uuid, long time) {
+
+        config().set(
+                "players." + uuid + ".last-claim",
+                time
+        );
+
+        SlimeDailyRewards.getInstance()
+                .getPlayerData()
+                .save();
+
+    }
+
+}
