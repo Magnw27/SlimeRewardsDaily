@@ -1,1 +1,20 @@
+gui:
+  title: "&aDaily Rewards"
+  size: 27
 
+rewards:
+
+  day1:
+    slimefun: ELECTRIC_MOTOR
+    amount: 32
+
+  day2:
+    slimefun: ELECTRO_MAGNET
+    amount: 64
+
+  day3:
+    slimefun: SUPREME_BASIC_VENTUS_GENERATOR
+    amount: 5
+
+cooldown:
+  hours: 24
