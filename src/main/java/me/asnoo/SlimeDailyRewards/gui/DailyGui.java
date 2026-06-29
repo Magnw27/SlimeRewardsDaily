@@ -1,32 +1,48 @@
 package me.asnoo.slimedailyrewards.gui;
 
+import me.asnoo.slimedailyrewards.util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class DailyGUI {
 
-    public static final String TITLE = "§aDaily Rewards";
+    public static final String TITLE = "§2✦ Daily Rewards ✦";
 
     public static void open(Player player) {
 
+        // Membuat inventory
         Inventory inventory = Bukkit.createInventory(null, 27, TITLE);
 
-        ItemStack reward = new ItemStack(Material.CHEST);
+        // Membuat item border
+        ItemStack border = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE)
+                .name(" ")
+                .build();
 
-        ItemMeta meta = reward.getItemMeta();
+        // Mengisi border
+        for (int i = 0; i < 27; i++) {
+            if (i < 9 || i > 17 || i == 9 || i == 17) {
+                inventory.setItem(i, border);
+            }
+        }
 
-        meta.setDisplayName("§aDaily Reward");
+        // Item Daily Reward
+        inventory.setItem(
+                13,
+                new ItemBuilder(Material.CHEST)
+                        .name("§aDaily Reward")
+                        .lore(
+                                "§7Klik untuk claim reward.",
+                                "",
+                                "§eComing Soon..."
+                        )
+                        .hideAttributes()
+                        .build()
+        );
 
-        reward.setItemMeta(meta);
-
-        inventory.setItem(13, reward);
-
+        // Membuka GUI
         player.openInventory(inventory);
-
     }
-
 }
