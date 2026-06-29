@@ -1,1 +1,16 @@
+name: SlimeRewards
+version: '1.0.0'
+main: me.namamu.slimerewards.SlimeRewards
+api-version: '1.21'
 
+author: Namamu
+
+commands:
+  daily:
+    description: Open Daily Rewards GUI
+    usage: /daily
+    permission: slimerewards.daily
+
+permissions:
+  slimerewards.daily:
+    default: true
