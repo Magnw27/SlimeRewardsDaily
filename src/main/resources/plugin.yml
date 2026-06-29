@@ -5,6 +5,9 @@ api-version: '1.21'
 
 author: Asnoo
 
+depend:
+  - Slimefun
+
 commands:
   daily:
     description: Open Daily Rewards GUI
@@ -14,6 +17,3 @@ commands:
 permissions:
   slimerewards.daily:
     default: true
-
-depend:
-  - Slimefun
