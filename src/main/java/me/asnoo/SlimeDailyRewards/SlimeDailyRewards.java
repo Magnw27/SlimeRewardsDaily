@@ -10,6 +10,8 @@ public final class SlimeRewards extends JavaPlugin {
 
     private static SlimeRewards instance;
 
+    private static ConfigManaer PlayerData;
+
     @Override
     public void onEnable() {
 
@@ -46,6 +48,9 @@ public final class SlimeRewards extends JavaPlugin {
 
     public static SlimeRewards getInstance() {
         return instance;
+    }
+
+    public static ConfigManager getPlayerData() {
     }
 
 }
