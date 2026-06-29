@@ -2,29 +2,21 @@ package me.asnoo.slimerewards;
 
 import me.asnoo.slimerewards.command.DailyCommand;
 import me.asnoo.slimerewards.listener.InventoryListener;
+import me.asnoo.slimerewards.util.ConfigManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SlimeRewards extends JavaPlugin {
 
-} {
-
     private static SlimeRewards instance;
 
-    private static ConfigManaer PlayerData;
+    private ConfigManager playerData;
 
     @Override
     public void onEnable() {
 
         instance = this;
 
-        getLogger().info("--------------------------------");
-        getLogger().info("SlimeRewards Aktif Bosqu!");
-        getLogger().info("Version : " + getDescription().getVersion());
-        getLogger().info("--------------------------------");
-    @Override
-    public void onEnable() {
-
-        instance = this;
+        playerData = new ConfigManager();
 
         getCommand("daily").setExecutor(new DailyCommand());
 
@@ -33,10 +25,10 @@ public final class SlimeRewards extends JavaPlugin {
                 this
         );
 
-    getLogger().info("SlimeRewards Enabled!");
-
-}
-
+        getLogger().info("--------------------------------");
+        getLogger().info("SlimeRewards Aktif Bosqu!");
+        getLogger().info("Version : " + getDescription().getVersion());
+        getLogger().info("--------------------------------");
     }
 
     @Override
@@ -50,7 +42,8 @@ public final class SlimeRewards extends JavaPlugin {
         return instance;
     }
 
-    public static ConfigManager getPlayerData() {
+    public ConfigManager getPlayerData() {
+        return playerData;
     }
 
 }
