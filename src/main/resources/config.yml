@@ -1,20 +1,29 @@
-gui:
-  title: "&aDaily Rewards"
-  size: 27
+daily-rewards:
 
-rewards:
-
-  day1:
+  1:
     slimefun: ELECTRIC_MOTOR
-    amount: 32
+    amount: 2
 
-  day2:
-    slimefun: ELECTRO_MAGNET
-    amount: 64
+  2:
+    slimefun: BATTERY
+    amount: 4
 
-  day3:
-    slimefun: SUPREME_BASIC_VENTUS_GENERATOR
-    amount: 5
+  3:
+    slimefun: SOLAR_PANEL
+    amount: 1
 
-cooldown:
-  hours: 24
+  4:
+    slimefun: BRONZE_INGOT
+    amount: 16
+
+  5:
+    slimefun: STEEL_INGOT
+    amount: 8
+
+  6:
+    slimefun: REINFORCED_ALLOY_INGOT
+    amount: 2
+
+  7:
+    slimefun: MAGIC_LUMP_3
+    amount: 1
