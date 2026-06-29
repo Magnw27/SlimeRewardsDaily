@@ -1,6 +1,6 @@
 name: SlimeRewards
 version: '1.0.0'
-main: me.asnoo.slimerewards.SlimeRewards
+main: me.asnoo.slimedailyrewards.SlimeDailyRewards
 api-version: '1.21'
 
 author: Asnoo
