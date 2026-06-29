@@ -1,5 +1,6 @@
 package me.asnoo.slimedailyrewards.gui;
 
+import me.asnoo.slimedailyrewards.manager.GUIManager;
 import me.asnoo.slimedailyrewards.util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -9,28 +10,49 @@ import org.bukkit.inventory.ItemStack;
 
 public class DailyGUI {
 
-    public static final String TITLE = "§2✦ Daily Rewards ✦";
-
     public static void open(Player player) {
 
-        // Membuat inventory
-        Inventory inventory = Bukkit.createInventory(null, 27, TITLE);
+        Inventory inventory = Bukkit.createInventory(
+                null,
+                GUIManager.DAILY_SIZE,
+                GUIManager.DAILY_TITLE
+        );
 
-        // Membuat item border
+        fillBorder(inventory);
+
+        createReward(inventory);
+
+        player.openInventory(inventory);
+    }
+
+    /**
+     * Mengisi border GUI
+     */
+    private static void fillBorder(Inventory inventory) {
+
         ItemStack border = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE)
                 .name(" ")
                 .build();
 
-        // Mengisi border
-        for (int i = 0; i < 27; i++) {
-            if (i < 9 || i > 17 || i == 9 || i == 17) {
-                inventory.setItem(i, border);
+        int size = inventory.getSize();
+
+        for (int slot = 0; slot < size; slot++) {
+
+            if (slot < 9 || slot >= size - 9 || slot % 9 == 0 || slot % 9 == 8) {
+                inventory.setItem(slot, border);
             }
+
         }
 
-        // Item Daily Reward
+    }
+
+    /**
+     * Membuat tombol reward
+     */
+    private static void createReward(Inventory inventory) {
+
         inventory.setItem(
-                13,
+                GUIManager.REWARD_SLOT,
                 new ItemBuilder(Material.CHEST)
                         .name("§aDaily Reward")
                         .lore(
@@ -42,7 +64,6 @@ public class DailyGUI {
                         .build()
         );
 
-        // Membuka GUI
-        player.openInventory(inventory);
     }
+
 }
