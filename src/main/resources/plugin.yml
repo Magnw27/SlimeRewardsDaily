@@ -1,9 +1,9 @@
 name: SlimeRewards
 version: '1.0.0'
-main: me.namamu.slimerewards.SlimeRewards
+main: me.asnoo.slimerewards.SlimeRewards
 api-version: '1.21'
 
-author: Namamu
+author: Asnoo
 
 commands:
   daily:
