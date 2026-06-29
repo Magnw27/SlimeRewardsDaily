@@ -1,4 +1,4 @@
-package me.namamu.slimerewards;
+package me.asnoo.slimedailyrewards;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
