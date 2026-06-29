@@ -14,3 +14,6 @@ commands:
 permissions:
   slimerewards.daily:
     default: true
+
+depend:
+  - Slimefun
