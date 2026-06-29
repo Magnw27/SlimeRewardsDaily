@@ -1,6 +1,6 @@
-package me.asnoo.slimerewards.command;
+package me.asnoo.slimedailyrewards.command;
 
-import me.asnoo.slimerewards.gui.DailyGUI;
+import me.asnoo.slimedailyrewards.gui.DailyGUI;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
