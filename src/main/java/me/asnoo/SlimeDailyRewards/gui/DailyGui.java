@@ -1,4 +1,4 @@
-package me.asnoo.slimerewards.gui;
+package me.asnoo.slimedailyrewards.gui;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
