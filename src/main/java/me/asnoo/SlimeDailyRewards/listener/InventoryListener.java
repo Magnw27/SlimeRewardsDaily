@@ -1,6 +1,6 @@
-package me.asnoo.slimerewards.listener;
+package me.asnoo.slimedailyrewards.listener;
 
-import me.asnoo.slimerewards.gui.DailyGUI;
+import me.asnoo.slimedailyrewards.gui.DailyGUI;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
