@@ -6,14 +6,15 @@ import org.bukkit.inventory.ItemStack;
 
 public class RewardManager {
 
-    public static ItemStack getDailyReward() {
+    public static ItemStack getReward(int day) {
 
         return new ItemBuilder(Material.CHEST)
-                .name("§aDaily Reward")
+                .name("§aDay " + day)
                 .lore(
-                        "§7Klik untuk claim reward.",
                         "",
-                        "§eComing Soon..."
+                        "§7Click to claim reward.",
+                        "",
+                        "§eReward Coming Soon"
                 )
                 .hideAttributes()
                 .build();
