@@ -1,6 +1,7 @@
 package me.asnoo.slimedailyrewards.gui;
 
 import me.asnoo.slimedailyrewards.manager.GUIManager;
+import me.asnoo.slimedailyrewards.manager.RewardManager;
 import me.asnoo.slimedailyrewards.util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -20,14 +21,12 @@ public class DailyGUI {
 
         fillBorder(inventory);
 
-        createReward(inventory);
+        createRewards(inventory);
 
         player.openInventory(inventory);
+
     }
 
-    /**
-     * Mengisi border GUI
-     */
     private static void fillBorder(Inventory inventory) {
 
         ItemStack border = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE)
@@ -46,23 +45,16 @@ public class DailyGUI {
 
     }
 
-    /**
-     * Membuat tombol reward
-     */
-    private static void createReward(Inventory inventory) {
+    private static void createRewards(Inventory inventory) {
 
-        inventory.setItem(
-                GUIManager.REWARD_SLOT,
-                new ItemBuilder(Material.CHEST)
-                        .name("§aDaily Reward")
-                        .lore(
-                                "§7Klik untuk claim reward.",
-                                "",
-                                "§eComing Soon..."
-                        )
-                        .hideAttributes()
-                        .build()
-        );
+        for (int day = 0; day < GUIManager.REWARD_SLOTS.length; day++) {
+
+            inventory.setItem(
+                    GUIManager.REWARD_SLOTS[day],
+                    RewardManager.getReward(day + 1)
+            );
+
+        }
 
     }
 
